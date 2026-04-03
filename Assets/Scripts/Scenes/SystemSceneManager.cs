@@ -13,7 +13,7 @@ public class SystemSceneManager : MonoBehaviour
     [SerializeField] Canvas loadingCanva;
     [SerializeField] float fillSpeed = 0.5f;
     [SerializeField] Image loadingBar;
-    [SerializeField] Camera loadinCamera;
+    [SerializeField] GameObject loadinCamera;
 
     float targetProgress;
     bool isLoading;
@@ -116,7 +116,7 @@ public class SystemSceneManager : MonoBehaviour
     {
         isLoading = enable;
         loadingCanva.gameObject.SetActive(enable);
-        loadinCamera.gameObject.SetActive(enable);
+        loadinCamera.SetActive(enable);
     }
 
 
