@@ -35,7 +35,10 @@ public class SystemSceneManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void Start()
+    {
+        LoadScene(1);
+    }
 
     private void Update()
     {
@@ -69,6 +72,7 @@ public class SystemSceneManager : MonoBehaviour
 
         Scene nextScene = SceneManager.GetSceneAt(i);
         SceneManager.SetActiveScene(nextScene);
+        await UnloadScene();
 
         EnableLoadingCanvas(false);
     }
