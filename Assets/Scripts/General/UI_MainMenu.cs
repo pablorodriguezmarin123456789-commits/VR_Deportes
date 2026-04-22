@@ -11,7 +11,7 @@ public class UI_MainMenu : MonoBehaviour
     }
     public void SettingsStateSwap()
     {
-        settingsMenu.SetActive(!settingsMenu);
+        settingsMenu.SetActive(!settingsMenu.activeInHierarchy);
     }
 
     public void Exit()

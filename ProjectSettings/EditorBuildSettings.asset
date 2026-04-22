@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dont_Destroy.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Main_Menu.unity
+    guid: fba3c9e646f8b464a8510be6ede7ee11
+  - enabled: 1
+    path: Assets/Scenes/Trash_Scene_Pablo.unity
+    guid: 4d10054e38b1c8347bc50088142930a1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8410cafaf27b34b41b1b183ba32538d5, type: 2}
