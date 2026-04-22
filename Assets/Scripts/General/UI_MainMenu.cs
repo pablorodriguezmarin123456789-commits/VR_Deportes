@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class UI_MainMenu : MonoBehaviour
 {
-    SystemSceneManager manager;
 
     [SerializeField] private GameObject settingsMenu;
     public void SwapScene(int index)
     {
-        manager.LoadScene(index);
+        SystemSceneManager.Singleton.LoadScene(index);
     }
     public void SettingsStateSwap()
     {

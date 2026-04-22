@@ -18,14 +18,14 @@ public class SystemSceneManager : MonoBehaviour
     float targetProgress;
     bool isLoading;
 
-    private static SystemSceneManager instance;
+    public static SystemSceneManager Singleton;
     private string sceneManagerName;
 
     private void Awake()
     {
-        if(instance == null)
+        if(Singleton == null)
         {
-            instance = this;
+            Singleton = this;
             
             loadingCanva.gameObject.SetActive(false);
             sceneManagerName = gameObject.scene.name;
