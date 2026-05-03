@@ -120,7 +120,8 @@ public class SystemSceneManager : MonoBehaviour
     {
         isLoading = enable;
         loadingCanva.gameObject.SetActive(enable);
-        loadinCamera.SetActive(enable);
+        loadinCamera.gameObject.transform.position = new Vector3(0,0,-2);
+       
     }
 
 
