@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 408814623}
   - component: {fileID: 408814624}
   - component: {fileID: 408814625}
+  - component: {fileID: 408814626}
   m_Layer: 0
   m_Name: Gestor De Escenas
   m_TagString: Untagged
@@ -427,7 +428,24 @@ MonoBehaviour:
   locomotor: {fileID: 8291946564454505596}
   slideInteractor: {fileID: 8291946564454505598}
   tpInteractor: {fileID: 8291946564454505597}
+  turnerEventBroadcaster: {fileID: 0}
   teleport: 0
+  turner: 0
+  tunneling: 0
+--- !u!114 &408814626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408814622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bacf5b1de51dcd94bb6759fb093925a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameSettings
+  Learning: 0
+  errorscount: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462420041728581831, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3593442230697739966, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: _broadcasters.Array.size
@@ -1057,6 +1075,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6025979963707700654, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6516658813583746058, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: _broadcasters.Array.size
       value: 2
@@ -1072,6 +1094,10 @@ PrefabInstance:
     - target: {fileID: 7379467919974310979, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: _axis
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7379467919974311038, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7660279715544798375, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_Enabled
