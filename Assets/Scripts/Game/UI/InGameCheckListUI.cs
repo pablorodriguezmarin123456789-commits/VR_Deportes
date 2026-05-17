@@ -10,21 +10,52 @@ public class InGameCheckListUI : MonoBehaviour
     // Las referencias de la interfaz
     [SerializeField] private GameObject checklistItemPrefab;
     [SerializeField] private GameObject checklistParent;
-    private Toggle _toggle;
-    private TMP_Text _text;
+
+    [SerializeField] private TMP_Text failsDisplay;
+    
+    private int totalFails;
 
     public void SetUp(ChecklistItemData[] checklistElements)
     {
         _checklistElements = checklistElements;
 
-        foreach (ChecklistItemData checklistItemData in _checklistElements)
+        foreach (var checklistItemData in _checklistElements)
         {
-            GameObject uiElement =  Instantiate(checklistItemPrefab, checklistParent.transform);
-            _toggle = uiElement.GetComponent<Toggle>();
-            _text = uiElement.GetComponent<TextMeshPro>();
+            var uiElement =  Instantiate(checklistItemPrefab, checklistParent.transform);
+            Toggle _toggle = uiElement.GetComponentInChildren<Toggle>();
+            TMP_Text _text = uiElement.GetComponentInChildren<TextMeshPro>();
 
-            _toggle.onValueChanged = checklistItemData.SetPlayerValue(_toggle.isOn);
+            _toggle.onValueChanged.AddListener((bool isOn) =>
+            {
+                checklistItemData.SetPlayerValue(isOn);
+            });
             _text.text = checklistItemData.checklistDefinition;
+        }
+    }
+
+    public void MidGameCheck()
+    {
+        totalFails = 0;
+
+        foreach (var item in _checklistElements)
+        {
+            if (item.trueValue != item.inputValue)
+            {
+                totalFails++;
+            }
+        }
+
+        if (totalFails == 0)
+        {
+            // TODO: WIN
+            failsDisplay.text = "¡Todo correcto!";
+            // TODO: Añadir evento de sonido
+            failsDisplay.color = Color.green;
+        }
+        else
+        {
+            failsDisplay.text = "Errores encontrados: " + totalFails;
+            failsDisplay.color = Color.red;
         }
     }
 }

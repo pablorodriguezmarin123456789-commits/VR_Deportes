@@ -31,24 +31,24 @@ public class ChecklistSystem : MonoBehaviour
         {
             int randomOutput = isolatedRandom.Next(0, 10);
 
-            // TRUE = It will be alright, FALSE = it will be wrong
+            // TRUE = IT IS WRONG, FALSE = IT IS RIGHT
             // TODO: Add cap to wrong and right elements.
             if (randomOutput <= 4)
             {
                 checklistElement.CorrectObjectActivation();
-                checklistElement.trueValue = true;
+                checklistElement.trueValue = false;
             }
             else
             {
                 checklistElement.IncorrectObjectActivation();
-                checklistElement.trueValue = false;
+                checklistElement.trueValue = true;
             }
         }
     }
     
     // CHECK THE CHECKLIST
 
-    public void CheckChecklist()
+    public ChecklistItemData[] CheckChecklist()
     {
         foreach (var item in checklistElements)
         {
@@ -69,5 +69,7 @@ public class ChecklistSystem : MonoBehaviour
                 item.itemResult = ChecklistItemData.Results.WrongMissed;
             }
         }
+        
+        return checklistElements;
     }
 }
