@@ -136,6 +136,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f022cc2646ddc74585294aac24cbda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &171108594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 831711877633122354, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+  m_PrefabInstance: {fileID: 8291946564454505595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcb907778a00234ea4e7aa9cf238631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &181070790
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +288,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181070790}
   m_CullTransparentMesh: 1
+--- !u!1 &205975463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6025979963707700654, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+  m_PrefabInstance: {fileID: 8291946564454505595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &292458746
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +444,8 @@ MonoBehaviour:
   locomotor: {fileID: 8291946564454505596}
   slideInteractor: {fileID: 8291946564454505598}
   tpInteractor: {fileID: 8291946564454505597}
-  turnerEventBroadcaster: {fileID: 0}
+  tunnelingObj: {fileID: 205975463}
+  turnerEventBroadcaster: {fileID: 1814452836}
   teleport: 0
   turner: 0
   tunneling: 0
@@ -907,6 +924,17 @@ MonoBehaviour:
   m_SendPointerHoverToParent: 1
   _useInitialPressPositionForDrag: 1
   _exclusiveMode: 1
+--- !u!114 &1745716012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1027536744248464958, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+  m_PrefabInstance: {fileID: 8291946564454505595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcb907778a00234ea4e7aa9cf238631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1747251457
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +1011,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747251457}
   m_CullTransparentMesh: 1
+--- !u!114 &1814452836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6181576215357097257, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+  m_PrefabInstance: {fileID: 8291946564454505595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5585168c67af345b1074140733215b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8291946564454505595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,6 +1042,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1557291628929132648, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: _interactors.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557291628929132648, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: '_interactors.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1745716012}
     - target: {fileID: 1612538104709798956, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: _updateMode
       value: -1
@@ -1051,6 +1098,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2959820193377393640, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: _controllerButtonUsage
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171810952471212548, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: _interactors.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3171810952471212548, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: '_interactors.Array.data[11]'
+      value: 
+      objectReference: {fileID: 171108594}
     - target: {fileID: 3593442230697739966, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: _broadcasters.Array.size
       value: 0
@@ -1067,6 +1126,10 @@ PrefabInstance:
       propertyPath: '_interactors.Array.data[2]'
       value: 
       objectReference: {fileID: 387345906}
+    - target: {fileID: 4379204629339890293, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: _maxStartGroundDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5045744144721968746, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1106,6 +1169,10 @@ PrefabInstance:
     - target: {fileID: 8410266978817848869, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_Name
       value: '[BuildingBlock] Camera Rig'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528252459012652606, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: _controllerButtonUsage
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8742877023403168577, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_Enabled

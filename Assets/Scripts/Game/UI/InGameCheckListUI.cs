@@ -39,7 +39,7 @@ public class InGameCheckListUI : MonoBehaviour
 
         foreach (var item in _checklistElements)
         {
-            if (item.trueValue != item.inputValue)
+            if (item.isNotCorrect != item.inputValue)
             {
                 totalFails++;
             }

@@ -8,7 +8,6 @@ public class InputManager : MonoBehaviour
     [SerializeField] GameObject slideInteractor;
     [SerializeField] GameObject tpInteractor;
     [SerializeField] GameObject tunnelingObj;
-
     [SerializeField] TurnerEventBroadcaster turnerEventBroadcaster;
 
     public bool teleport;
@@ -37,19 +36,9 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slideInteractor.SetActive(!teleport);
-        tpInteractor.SetActive(teleport);
-        if (!teleport && locomotor.IsGrounded)
-            locomotor.EnableMovement();
+        SlideTeleportSwapper();
         TurnSmothSwap();
-        if(!turner && tunneling)
-        {
-            tunnelingObj.SetActive(true);
-        }
-        if (turner || !turner && !tunneling)
-        {
-            tunnelingObj.SetActive(false);
-        }
+        Tunneling();
 
     }
 
@@ -59,5 +48,27 @@ public class InputManager : MonoBehaviour
             turnerEventBroadcaster.TurnMethod = TurnerEventBroadcaster.TurnMode.Snap;
         if (!turner)
             turnerEventBroadcaster.TurnMethod = TurnerEventBroadcaster.TurnMode.Smooth;
+    }
+
+    public void Tunneling()
+    {
+        if (!turner && tunneling)
+        {
+            tunnelingObj.SetActive(true);
+        }
+        if (turner || !turner && !tunneling)
+        {
+            tunnelingObj.SetActive(false);
+        }
+    }
+
+    public void SlideTeleportSwapper()
+    {
+        slideInteractor.SetActive(!teleport);
+        tpInteractor.SetActive(teleport);
+        if (!teleport && locomotor.IsGrounded)
+            locomotor.EnableMovement();
+        else 
+            locomotor.DisableMovement();
     }
 }

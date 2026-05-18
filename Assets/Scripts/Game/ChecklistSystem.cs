@@ -2,16 +2,34 @@ using UnityEngine;
 
 public class ChecklistSystem : MonoBehaviour
 {
+    public static ChecklistSystem Singleton;
+
+
     [SerializeField] private ChecklistItemData[] checklistElements;
 
     [SerializeField] private string inputSeed = "";
     [SerializeField] private bool useRandomSeed = true;
 
+    public int errosAmount;
+
     private int _numericSeed;
 
+
+    private void Awake()
+    {
+        if(Singleton == null)
+        {
+            Singleton = this;
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // MAKE SURE GENERATE CHECKLIST GOES BEFORE GENERATE MAP
-    
-    private void GenerateChecklist()
+
+    public void GenerateChecklist()
     {
         if (useRandomSeed || string.IsNullOrEmpty(inputSeed))
         {
@@ -36,12 +54,12 @@ public class ChecklistSystem : MonoBehaviour
             if (randomOutput <= 4)
             {
                 checklistElement.CorrectObjectActivation();
-                checklistElement.trueValue = false;
+                checklistElement.isNotCorrect = false;
             }
             else
             {
                 checklistElement.IncorrectObjectActivation();
-                checklistElement.trueValue = true;
+                checklistElement.isNotCorrect = true;
             }
         }
     }
@@ -52,21 +70,19 @@ public class ChecklistSystem : MonoBehaviour
     {
         foreach (var item in checklistElements)
         {
-            if (item.trueValue && item.trueValue == item.inputValue)
+            if (item.isNotCorrect)
             {
-                item.itemResult = ChecklistItemData.Results.CorrectSafe;
+                if (item.isNotCorrect == item.inputValue)
+                    item.itemResult = ChecklistItemData.Results.CorrectSpotted;
+                if (item.isNotCorrect != item.inputValue)
+                    item.itemResult = ChecklistItemData.Results.WrongMissed;
             }
-            if (!item.trueValue && item.trueValue == item.inputValue)
+            if (!item.isNotCorrect)
             {
-                item.itemResult = ChecklistItemData.Results.CorrectSpotted;
-            }
-            if (item.trueValue && item.trueValue != item.inputValue)
-            {
-                item.itemResult = ChecklistItemData.Results.WrongFalseAlarm;
-            }
-            if (!item.trueValue && item.trueValue != item.inputValue)
-            {
-                item.itemResult = ChecklistItemData.Results.WrongMissed;
+                if (item.isNotCorrect == item.inputValue)
+                    item.itemResult = ChecklistItemData.Results.CorrectSafe;
+                if (item.isNotCorrect != item.inputValue)
+                    item.itemResult = ChecklistItemData.Results.WrongFalseAlarm;
             }
         }
         

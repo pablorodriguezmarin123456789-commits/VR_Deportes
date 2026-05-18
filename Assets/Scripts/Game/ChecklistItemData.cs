@@ -11,7 +11,7 @@ public class ChecklistItemData
     [SerializeField] private GameObject[] incorrectObjects;
     
     // Values
-    [HideInInspector] public bool trueValue;
+    [HideInInspector] public bool isNotCorrect;
     public bool inputValue;
     
     // Checklist Text
