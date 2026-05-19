@@ -7,6 +7,7 @@ public class ChecklistSystem : MonoBehaviour
 
     [SerializeField] private ChecklistItemData[] checklistElements;
 
+    [SerializeField] public bool learning;
     [SerializeField] public string inputSeed = "";
     [SerializeField] public bool useRandomSeed = true;
 
@@ -52,7 +53,7 @@ public class ChecklistSystem : MonoBehaviour
 
             // TRUE = IT IS WRONG, FALSE = IT IS RIGHT
             // TODO: Add cap to wrong and right elements.
-            if (randomOutput <= 4 || erroscount < errosAmount)
+            if (randomOutput <= 4 || erroscount < errosAmount || learning)
             {
                 checklistElement.CorrectObjectActivation();
                 checklistElement.isNotCorrect = false;

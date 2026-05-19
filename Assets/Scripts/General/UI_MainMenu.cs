@@ -47,16 +47,26 @@ public class UI_MainMenu : MonoBehaviour
 
     public void LearningOn()
     {
-        GameSettings.Singleton.Learning = learning.isOn;
+        ChecklistSystem.Singleton.learning = learning.isOn;
+        if (learning)
+        { 
+            errorsAmount.gameObject.SetActive(false);
+        }
+        else
+        {
+            errorsAmount.gameObject.SetActive(true);
+        }
+
     }
     public void ErrorsAmount()
     {
-        GameSettings.Singleton.errorscount = (int)errorsAmount.value;
+        ChecklistSystem.Singleton.errosAmount = (int)errorsAmount.value;
         counter.text = errorsAmount.value.ToString();
     }
 
     public void SetUpSeed()
     {
+
         ChecklistSystem.Singleton.useRandomSeed = randomSeed.isOn;
         ChecklistSystem.Singleton.inputSeed = seed.text;
     }
