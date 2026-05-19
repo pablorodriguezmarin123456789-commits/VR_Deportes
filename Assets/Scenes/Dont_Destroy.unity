@@ -391,8 +391,9 @@ GameObject:
   - component: {fileID: 408814624}
   - component: {fileID: 408814625}
   - component: {fileID: 408814626}
+  - component: {fileID: 408814627}
   m_Layer: 0
-  m_Name: Gestor De Escenas
+  m_Name: System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -442,12 +443,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   locomotor: {fileID: 8291946564454505596}
+  characterController: {fileID: 8291946564454505599}
   slideInteractor: {fileID: 8291946564454505598}
   tpInteractor: {fileID: 8291946564454505597}
   tunnelingObj: {fileID: 205975463}
   turnerEventBroadcaster: {fileID: 1814452836}
-  teleport: 0
-  turner: 0
+  teleport: 1
+  turner: 1
   tunneling: 0
 --- !u!114 &408814626
 MonoBehaviour:
@@ -463,6 +465,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameSettings
   Learning: 0
   errorscount: 0
+--- !u!114 &408814627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408814622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18a13eaa88b15c4c845ce6841582675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChecklistSystem
+  checklistElements: []
+  inputSeed: 
+  useRandomSeed: 0
+  errosAmount: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6025979963707700654, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6516658813583746058, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: _broadcasters.Array.size
@@ -1207,6 +1225,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7379467919974311038, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
   m_PrefabInstance: {fileID: 8291946564454505595}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8291946564454505599 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 606576044600752343, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+  m_PrefabInstance: {fileID: 8291946564454505595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8733ebe23f85185428441f8c331788fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

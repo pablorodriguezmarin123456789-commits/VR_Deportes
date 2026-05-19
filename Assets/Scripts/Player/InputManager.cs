@@ -5,6 +5,7 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Singleton;
     [SerializeField] FirstPersonLocomotor locomotor;
+    [SerializeField] Oculus.Interaction.Locomotion.CharacterController characterController;
     [SerializeField] GameObject slideInteractor;
     [SerializeField] GameObject tpInteractor;
     [SerializeField] GameObject tunnelingObj;
@@ -66,7 +67,7 @@ public class InputManager : MonoBehaviour
     {
         slideInteractor.SetActive(!teleport);
         tpInteractor.SetActive(teleport);
-        if (!teleport && locomotor.IsGrounded)
+        if (!teleport && characterController.TryGround(1))
             locomotor.EnableMovement();
         else 
             locomotor.DisableMovement();
