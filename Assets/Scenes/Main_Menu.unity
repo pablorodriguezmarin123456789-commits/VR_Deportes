@@ -1777,13 +1777,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI_MainMenu
   settingsMenu: {fileID: 1564978131}
   teleport: {fileID: 1694521764}
-  turn: {fileID: 0}
-  tunneling: {fileID: 0}
+  turn: {fileID: 4897644}
+  tunneling: {fileID: 434665298}
   learning: {fileID: 1114322834}
   errorsAmount: {fileID: 1928552595}
   counter: {fileID: 971090407}
-  seed: {fileID: 0}
-  randomSeed: {fileID: 0}
+  seed: {fileID: 1521029660}
+  randomSeed: {fileID: 329713060}
 --- !u!1 &648782440
 GameObject:
   m_ObjectHideFlags: 0

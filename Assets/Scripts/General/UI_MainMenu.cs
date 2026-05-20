@@ -48,13 +48,15 @@ public class UI_MainMenu : MonoBehaviour
     public void LearningOn()
     {
         ChecklistSystem.Singleton.learning = learning.isOn;
-        if (learning)
+        if (learning.isOn)
         { 
             errorsAmount.gameObject.SetActive(false);
+            seed.gameObject.SetActive(false);
         }
-        else
+        if(!learning.isOn)
         {
             errorsAmount.gameObject.SetActive(true);
+            seed.gameObject.SetActive(true);
         }
 
     }

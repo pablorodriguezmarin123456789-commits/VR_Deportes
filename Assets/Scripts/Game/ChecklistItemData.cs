@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
-public class ChecklistItemData
+public class ChecklistItemData : MonoBehaviour
 {
     // System.Serializable para que pueda existir en la escena
     
@@ -11,7 +10,7 @@ public class ChecklistItemData
     [SerializeField] private GameObject[] incorrectObjects;
     
     // Values
-    [HideInInspector] public bool isNotCorrect;
+    public bool isNotCorrect;
     public bool inputValue;
     
     // Checklist Text
@@ -20,7 +19,32 @@ public class ChecklistItemData
     // For the correction
     public enum Results{CorrectSafe, CorrectSpotted, WrongFalseAlarm, WrongMissed}
     [HideInInspector] public Results itemResult;
-    
+
+
+    private void Awake()
+    {
+        ChecklistSystem.Singleton.AddElementToList(this);
+    }
+    public void Start()
+    {
+        if (!ChecklistSystem.Singleton.generatingChecklist)
+        {
+            ChecklistSystem.Singleton.GenerateChecklist();
+            ChecklistSystem.Singleton.generatingChecklist = true;
+        }
+    }
+
+    public void OnDestroy()
+    {
+        if (ChecklistSystem.Singleton.generatingChecklist)
+        {
+            ChecklistSystem.Singleton.ClearList();
+            ChecklistSystem.Singleton.generatingChecklist = false;
+        }
+        
+       
+    }
+
     // UI FUNCTIONS
     public Toggle.ToggleEvent SetPlayerValue(bool isChecked)
     {

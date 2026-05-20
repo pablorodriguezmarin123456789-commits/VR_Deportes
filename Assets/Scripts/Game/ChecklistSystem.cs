@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ChecklistSystem : MonoBehaviour
@@ -5,7 +6,7 @@ public class ChecklistSystem : MonoBehaviour
     public static ChecklistSystem Singleton;
 
 
-    [SerializeField] private ChecklistItemData[] checklistElements;
+    [SerializeField] private List<ChecklistItemData> checklistElements;
 
     [SerializeField] public bool learning;
     [SerializeField] public string inputSeed = "";
@@ -16,7 +17,7 @@ public class ChecklistSystem : MonoBehaviour
 
     private int _numericSeed;
 
-
+    public bool generatingChecklist;
     private void Awake()
     {
         if(Singleton == null)
@@ -31,6 +32,11 @@ public class ChecklistSystem : MonoBehaviour
     }
     // MAKE SURE GENERATE CHECKLIST GOES BEFORE GENERATE MAP
 
+
+    public List<ChecklistItemData> GetChecklistElements()
+    {
+        return checklistElements;
+    }
     public void GenerateChecklist()
     {
         if (useRandomSeed || string.IsNullOrEmpty(inputSeed))
@@ -66,10 +72,18 @@ public class ChecklistSystem : MonoBehaviour
             }
         }
     }
-    
+
+    public void AddElementToList(ChecklistItemData elemento)
+    {
+        checklistElements.Add(elemento);
+    }
+    public void ClearList()
+    {
+        checklistElements.Clear();
+    }
     // CHECK THE CHECKLIST
 
-    public ChecklistItemData[] CheckChecklist()
+    public List<ChecklistItemData> CheckChecklist()
     {
         foreach (var item in checklistElements)
         {

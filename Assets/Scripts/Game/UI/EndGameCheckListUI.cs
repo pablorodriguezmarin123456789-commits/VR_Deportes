@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -26,8 +27,9 @@ public class EndGameCheckListUI : MonoBehaviour
 
     }
 
-    private void BuildEndGameUI(ChecklistItemData[] gradedElements)
+    private void BuildEndGameUI()
     {
+        List<ChecklistItemData> gradedElements = ChecklistSystem.Singleton.CheckChecklist();
         foreach (var check in gradedElements)
         {
             GameObject spawnedPrefab = null;

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 public class InGameCheckListUI : MonoBehaviour
 {
     // La lista de comprobaciones
-    private ChecklistItemData[] _checklistElements;
+    private List<ChecklistItemData> _checklistElements;
     
     // Las referencias de la interfaz
     [SerializeField] private GameObject checklistItemPrefab;
@@ -15,9 +16,9 @@ public class InGameCheckListUI : MonoBehaviour
     
     private int totalFails;
 
-    public void SetUp(ChecklistItemData[] checklistElements)
+    public void SetUp()
     {
-        _checklistElements = checklistElements;
+        _checklistElements = ChecklistSystem.Singleton.GetChecklistElements();
 
         foreach (var checklistItemData in _checklistElements)
         {
