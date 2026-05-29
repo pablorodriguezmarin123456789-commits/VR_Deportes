@@ -16,9 +16,10 @@ public class UI_MainMenu : MonoBehaviour
     [SerializeField] private InputField seed;
     [SerializeField] private Toggle randomSeed;
 
-
     public void SwapScene(int index)
     {
+        ChecklistSystem.Singleton.MainMenuButtonUIArm.SetActive(true);
+        UI_InGameChecklistMenu.Singleton.OnMainMenu = false;
         SystemSceneManager.Singleton.LoadScene(index);
     }
     public void SettingsStateSwap()

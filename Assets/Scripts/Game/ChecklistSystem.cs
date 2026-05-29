@@ -12,6 +12,8 @@ public class ChecklistSystem : MonoBehaviour
     [SerializeField] public string inputSeed = "";
     [SerializeField] public bool useRandomSeed = true;
 
+    [SerializeField] public GameObject MainMenuButtonUIArm;
+
     public int errosAmount;
     private int erroscount;
 

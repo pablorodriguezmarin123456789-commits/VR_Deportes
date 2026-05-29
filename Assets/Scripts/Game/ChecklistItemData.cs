@@ -30,6 +30,7 @@ public class ChecklistItemData : MonoBehaviour
         if (!ChecklistSystem.Singleton.generatingChecklist)
         {
             ChecklistSystem.Singleton.GenerateChecklist();
+            UI_InGameChecklistMenu.Singleton.SetUpChecklist();
             ChecklistSystem.Singleton.generatingChecklist = true;
         }
     }

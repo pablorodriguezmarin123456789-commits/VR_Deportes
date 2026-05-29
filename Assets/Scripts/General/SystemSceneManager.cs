@@ -53,6 +53,7 @@ public class SystemSceneManager : MonoBehaviour
 
         }
     }
+
     public async Task LoadScene(int i, float duration = 1, float waitTime = 0)
     {
         loadingBar.fillAmount = 0;

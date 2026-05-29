@@ -7,32 +7,51 @@ public class UI_InGameChecklistMenu : MonoBehaviour
 {
     [Header("Checklist")]
     [SerializeField] private GameObject checklistItemPrefab;
+    [SerializeField] private GameObject checkListPanel;
     [SerializeField] private Transform checklistParent;
     [SerializeField] private TMP_Text failsDisplay;
 
     [Header("Settings Menu")]
     [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject panelMenuIngame;
 
     [Header("Locomotion Settings")]
     [SerializeField] private Toggle teleport;
     [SerializeField] private Toggle turn;
     [SerializeField] private Toggle tunneling;
-    [SerializeField] private Toggle learning;
-    [SerializeField] private Slider errorsAmount;
-    [SerializeField] private TextMeshProUGUI counter;
-    [SerializeField] private InputField seed;
-    [SerializeField] private Toggle randomSeed;
 
     private List<ChecklistItemData> checklistElements;
     private int totalFails;
+    public bool OnMainMenu;
+    public static UI_InGameChecklistMenu Singleton;
 
+
+    private void Awake()
+    {
+        if (Singleton == null)
+        {
+            Singleton = this;
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
-        SetUpChecklist();
         SyncSettings();
-
+        panelMenuIngame.SetActive(false);
         if (settingsMenu != null)
             settingsMenu.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (OnMainMenu)
+        {
+            panelMenuIngame.SetActive(false);
+        }
     }
 
     public void SetUpChecklist()
@@ -68,6 +87,7 @@ public class UI_InGameChecklistMenu : MonoBehaviour
         }
     }
 
+
     public void MidGameCheck()
     {
         totalFails = 0;
@@ -94,16 +114,30 @@ public class UI_InGameChecklistMenu : MonoBehaviour
 
     public void SettingsStateSwap()
     {
+        checkListPanel.SetActive(false);
         settingsMenu.SetActive(!settingsMenu.activeInHierarchy);
+    }
+
+    public void OpenCanvasList()
+    {
+        if(!OnMainMenu)
+            panelMenuIngame.SetActive(!panelMenuIngame.activeInHierarchy);
+    }
+
+    public void CheckListSwapState()
+    {
+        settingsMenu.SetActive(false);
+        checkListPanel.SetActive(!checkListPanel.activeInHierarchy);
     }
 
     public void Continue()
     {
-        gameObject.SetActive(false);
+        checkListPanel.SetActive(false);
     }
 
     public void GoToMainMenu()
     {
+        OnMainMenu = true;
         SystemSceneManager.Singleton.LoadScene(1);
     }
 
@@ -127,34 +161,11 @@ public class UI_InGameChecklistMenu : MonoBehaviour
         InputManager.Singleton.tunneling = tunneling.isOn;
     }
 
-    public void LearningOn()
-    {
-        ChecklistSystem.Singleton.learning = learning.isOn;
-
-        errorsAmount.gameObject.SetActive(!learning.isOn);
-        seed.gameObject.SetActive(!learning.isOn);
-    }
-
-    public void ErrorsAmount()
-    {
-        ChecklistSystem.Singleton.errosAmount = (int)errorsAmount.value;
-        counter.text = errorsAmount.value.ToString();
-    }
-
 
     private void SyncSettings()
     {
         teleport.isOn = InputManager.Singleton.teleport;
         turn.isOn = InputManager.Singleton.turner;
         tunneling.isOn = InputManager.Singleton.tunneling;
-
-        learning.isOn = ChecklistSystem.Singleton.learning;
-        errorsAmount.value = ChecklistSystem.Singleton.errosAmount;
-        counter.text = errorsAmount.value.ToString();
-
-        seed.text = ChecklistSystem.Singleton.inputSeed;
-        randomSeed.isOn = ChecklistSystem.Singleton.useRandomSeed;
-
-        LearningOn();
     }
 }
