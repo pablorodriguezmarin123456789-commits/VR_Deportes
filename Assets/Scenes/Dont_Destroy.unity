@@ -1158,6 +1158,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 446765849994037897, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446765849994037897, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446765849994037897, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 446765849994037897, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 481602308338773703, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: _rotation.w
       value: 1
@@ -1203,6 +1219,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689447862945923557, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893862231077770911, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893862231077770911, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893862231077770911, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893862231077770911, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1322,6 +1354,18 @@ PrefabInstance:
       propertyPath: _maxStartGroundDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4549449279084928433, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1212236828}
+    - target: {fileID: 4549449279084928433, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TunnelingOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549449279084928433, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_InGameChecklistMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4561994662183273995, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1394,6 +1438,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5448100337361851557, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448100337361851557, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448100337361851557, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448100337361851557, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5487811302504445809, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1446,6 +1506,18 @@ PrefabInstance:
       propertyPath: '_broadcasters.Array.data[1]'
       value: 
       objectReference: {fileID: 1318399282}
+    - target: {fileID: 6717439085642187353, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1212236828}
+    - target: {fileID: 6717439085642187353, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TeleportOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717439085642187353, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_InGameChecklistMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6913368219819081234, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1502,6 +1574,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7414470984691470057, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7660279715544798375, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1526,6 +1602,34 @@ PrefabInstance:
       propertyPath: checklistItemPrefab
       value: 
       objectReference: {fileID: 6445273397839587525, guid: 157489d6845051d41a679d94511847f5, type: 3}
+    - target: {fileID: 7987483518364202721, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987483518364202721, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987483518364202721, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987483518364202721, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997049818812332433, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1212236828}
+    - target: {fileID: 7997049818812332433, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997049818812332433, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_InGameChecklistMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8410266978817848869, guid: c90ab98c41485434382dd2fbd2d17f73, type: 3}
       propertyPath: m_Name
       value: '[BuildingBlock] Camera Rig'
